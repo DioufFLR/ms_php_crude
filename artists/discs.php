@@ -28,11 +28,12 @@ $requete->closeCursor();
 </head>
 <body>
 
-<h1>Liste des disques</h1>
 
-<button><a href="disc_new.php">Ajouter</a></button>
 
 <table>
+    <th><h1>Liste des disques</h1></th>
+
+    <th><button name="ajouter"><a href="disc_new.php">Ajouter</a></button></th>
         <?php foreach ($tableau as $disc): ?>
 
         <tr>
