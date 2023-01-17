@@ -1,44 +1,4 @@
 <?php
-//
-//
-//if (isset($_POST['title']) && $_POST['title'] != "") {
-//    $title = $_POST['title'];
-//} else {
-//    $title = null;
-//}
-//if (isset($_POST['artist']) && $_POST['artist'] != "") {
-//    $artist = $_POST['artist'];
-//} else {
-//    $artist = null;
-//}
-//if (isset($_POST['year']) && $_POST['year'] != "") {
-//    $year = $_POST['year'];
-//} else {
-//    $year = null;
-//}
-//if (isset($_POST['genre']) && $_POST['genre'] != "") {
-//    $genre = $_POST['genre'];
-//} else {
-//    $genre = null;
-//}
-//if (isset($_POST['label']) && $_POST['label'] != "") {
-//    $label = $_POST['label'];
-//} else {
-//    $label = null;
-//}
-//if (isset($_POST['price']) && $_POST['price'] != "") {
-//    $price = $_POST['price'];
-//} else {
-//    $price = null;
-//}
-//if (isset($_POST['picture']) && $_POST['picture'] != "") {
-//    $picture = $_POST['picture'];
-//}
-//else {
-//
-//    $picture = null;
-//}
-
 
 // Récupération de l'URL (même traitement, avec une syntaxe abrégée)
 $title = (isset($_POST['title']) && ($_POST['title'] != "")) ? $_POST['title'] : Null;
@@ -47,7 +7,10 @@ $year = (isset($_POST['year']) && ($_POST['year'] != "")) ? $_POST['year'] : Nul
 $genre = (isset($_POST['genre']) && ($_POST['genre'] != "")) ? $_POST['genre'] : Null;
 $label = (isset($_POST['label']) && ($_POST['label'] != "")) ? $_POST['label'] : Null;
 $price = (isset($_POST['price']) && ($_POST['price'] != "")) ? $_POST['price'] : Null;
-$picture = (isset($_POST['picture']) && ($_POST['picture'] != "")) ? $_POST['picture'] : Null;
+$picture = (isset($_FILES['picture']) && ($_FILES['picture'] != "")) ? $_FILES['picture'] : Null;
+
+// faire id des artiste pour joindres fichiers images
+
 
 
 

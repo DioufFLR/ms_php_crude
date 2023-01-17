@@ -1,3 +1,11 @@
+<?php
+include "db.php";
+$db = connexionBase();
+$requete = $db->query("SELECT * FROM disc JOIN artist ON artist.artist_id = disc.artist_id;");
+$tableau = $requete->fetchAll(PDO::FETCH_OBJ);
+$requete->closeCursor();
+?>
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -15,14 +23,21 @@
         <br>
         <br>
 
-    <form action="script_disc_ajout.php" method="post">
+
+    <form action="script_disc_ajout.php" method="post" enctype="multipart/form-data">
 
         <label for="title_for_label">Title</label><br>
         <input type="text" name="title" id="title_for_label" >
         <br>
-        <label for="artist_for_label">Artist</label><br>
-        <input type="text" name="artist" id="artist_for_label" >
-        <br>
+
+        <select name="artist" id="artist" class="col-12">
+            <option disabled selected>Selectionnez un artiste</option>
+            <?php foreach ($tableau as $disc):?>
+                <option value="<?=$disc->artist_name?>"><?=$disc->artist_name?></option>
+            <?php endforeach; ?>
+        </select>
+
+        <br><br>
         <label for="year_for_label">Year</label><br>
         <input type="text" name="year" id="year_for_label" >
         <br>
@@ -39,6 +54,8 @@
         <input type="file" name="picture" id="fichier_for_label">
 
         <input type="submit" value="Ajouter">
+
+        </select>
     </form>
 
 </body>

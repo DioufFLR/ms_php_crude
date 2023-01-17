@@ -27,10 +27,17 @@
         <title>PDO - Détail</title>
     </head>
     <body>
-    Artiste N°<?php echo $myArtist->artist_id ?>
-    Nom de l'artiste : <?= $myArtist->artist_name ?>
-    Site Internet : <?= $myArtist->artist_url ?>
-    <a href="artist_form.php?id=<?= $myArtist->artist_id ?>">Modifier</a>
-    <a href="script_artist_delete.php?id=<?= $myArtist->artist_id ?>">Supprimer</a>
+
+    <h1>Details</h1>
+
+    <div class="table">
+<!--        Title--><?php //$disc =;;
+        echo $disc -> disc_title?>
+        Year<?= $disc -> disc_year?>
+        Label<?= $disc->artist_url ?>
+        <a href="disc_new.php?id=<?= $disc->artist_id ?>">Modifier</a>
+        <a href="script_artist_delete.php?id=<?= $myArtist->artist_id ?>">Supprimer</a>
+    </div>
+
     </body>
 </html>
