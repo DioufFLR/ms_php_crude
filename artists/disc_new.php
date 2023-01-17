@@ -12,30 +12,33 @@
 
     <button><a href="discs.php">Revenir aux discs</a></button>
 
+        <br>
+        <br>
+
     <form action="script_disc_ajout.php" method="post">
 
-        <label for="name">Title</label><br>
-        <input type="text" name="name" id="name" >
+        <label for="title_for_label">Title</label><br>
+        <input type="text" name="title" id="title_for_label" >
         <br>
-        <label for="artist">Artist</label><br>
-        <input type="text" name="artist" id="artist" >
+        <label for="artist_for_label">Artist</label><br>
+        <input type="text" name="artist" id="artist_for_label" >
         <br>
-        <label for="year">Year</label><br>
-        <input type="text" name="year" id="year" >
+        <label for="year_for_label">Year</label><br>
+        <input type="text" name="year" id="year_for_label" >
         <br>
-        <label for="genre">Genre</label><br>
-        <input type="text" name="genre" id="genre" >
+        <label for="genre_for_label">Genre</label><br>
+        <input type="text" name="genre" id="genre_for_label" >
         <br>
-        <label for="label">Label</label><br>
-        <input type="text" name="label" id="label" >
+        <label for="label_for_label">Label</label><br>
+        <input type="text" name="label" id="label_for_label" >
         <br>
-        <label for="price">Price</label><br>
-        <input type="text" name="price" id="price" >
+        <label for="price_for_label">Price</label><br>
+        <input type="text" name="price" id="price_for_label" >
         <br>
-        <label for="file">Picture</label><br>
-        <input type="file" name="file">
+        <label for="fichier_for_label">Picture</label><br>
+        <input type="file" name="picture" id="fichier_for_label">
 
-        <input type="submit">
+        <input type="submit" value="Ajouter">
     </form>
 
 </body>
