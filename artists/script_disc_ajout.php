@@ -1,5 +1,7 @@
 <?php
 
+
+
 // Récupération de l'URL (même traitement, avec une syntaxe abrégée)
 $title = (isset($_POST['title']) && ($_POST['title'] != "")) ? $_POST['title'] : Null;
 $artist = (isset($_POST['artist']) && ($_POST['artist'] != "")) ? $_POST['artist'] : Null;
@@ -7,12 +9,46 @@ $year = (isset($_POST['year']) && ($_POST['year'] != "")) ? $_POST['year'] : Nul
 $genre = (isset($_POST['genre']) && ($_POST['genre'] != "")) ? $_POST['genre'] : Null;
 $label = (isset($_POST['label']) && ($_POST['label'] != "")) ? $_POST['label'] : Null;
 $price = (isset($_POST['price']) && ($_POST['price'] != "")) ? $_POST['price'] : Null;
-$picture = (isset($_FILES['picture']) && ($_FILES['picture'] != "")) ? $_FILES['picture'] : Null;
+$picture = (isset($_POST['picture']) && ($_POST['picture'] != "")) ? $_POST['picture'] : Null;
 
-// faire id des artiste pour joindres fichiers images
+// Travaille img
+//if(isset($_FILES['file'])){
+//    $tmpName = $_FILES['file']['tmp_name'];
+//    $name = $_FILES['file']['name'];
+//    $size = $_FILES['file']['size'];
+//    $error = $_FILES['file']['error'];
+//}
+//move_uploaded_file($tmpName,'./upload/'.$name);
+//
+// vérification de l'extension
+//$tabExtension = explode('.', $name);
+//$extension = strtolower(end($tabExtension));
+//$extensions = ['jpg', 'png', 'jpeg', 'gif'];
 
+//if(in_array($extension, $extensions)){
+//    move_uploaded_file($tmpName,'./upload/'.$name);
+//}
+//else{
+//    echo "Mauvaise extension";
+//}
+//
+//Taille max que l'on accepte
+$maxSize = 400000;
 
+//if(in_array($extension, $extensions) && $size <= $maxSize){
+//    move_uploaded_file($tmpName,'./upload/'.$name);
+//}
+//else{
+//    echo "Mauvaise extension ou taille trop grande";
+//}
 
+//// vérif des erreurs
+//if(in_array($extension, $extensions) && $size <= $maxSize && $error == 0){
+//    move_uploaded_file($tmpName,'./upload/'.$name);
+//}
+//else{
+//    echo "Une erreur est survenue";
+//}̀;
 
 // En cas d'erreur, on renvoie vers le formulaire
 if ($title == Null ||  $year == Null ||$artist == Null || $genre == Null || $label == Null || $price == Null || $picture == Null) {
@@ -26,9 +62,8 @@ $db = connexionBase();
 
 try {
     // Construction de la requête INSERT sans injection SQL :
-    $requete = $db->prepare(/** @lang text */ "INSERT INTO disc (disc.disc_title, disc.disc_year, disc.disc_genre, disc.disc_label, disc.disc_price, disc.disc_picture) VALUES (:title, :year, :genre, :label, :price, :picture);
-                                                      INSERT INTO artist ( artist.artist_name) VALUES (:artist)");
-//    $requete2 = $db->prepare("INSERT INTO artist (artist_name) VALUES (:artist);");
+    $requete = $db->prepare(/** @lang text */ "INSET INTO disc (disc_title, artist_name, disc_year, disc_genre, disc_label, disc_price, disc_picture) 
+    VALUES (:title, :artist, :year, :genre, :label, :price, :picture)");
 
     // Association des valeurs aux paramètres via bindValue() :
     $requete->bindValue(":title", $title, PDO::PARAM_STR);
@@ -37,7 +72,7 @@ try {
     $requete->bindValue(":genre", $genre, PDO::PARAM_STR);
     $requete->bindValue(":label", $label, PDO::PARAM_STR);
     $requete->bindValue(":price", $price, PDO::PARAM_STR);
-    $requete->bindValue(":picture", $price, PDO::PARAM_STR);
+    $requete->bindValue(":picture", $picture, PDO::PARAM_STR);
 
     // Lancement de la requête :
     $requete->execute();

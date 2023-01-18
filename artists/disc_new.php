@@ -26,36 +26,35 @@ $requete->closeCursor();
 
     <form action="script_disc_ajout.php" method="post" enctype="multipart/form-data">
 
-        <label for="title_for_label">Title</label><br>
-        <input type="text" name="title" id="title_for_label" >
+        <label for="title">Title</label><br>
+        <input type="text" name="title" id="title" >
         <br>
 
         <select name="artist" id="artist" class="col-12">
             <option disabled selected>Selectionnez un artiste</option>
             <?php foreach ($tableau as $disc):?>
-                <option value="<?=$disc->artist_name?>"><?=$disc->artist_name?></option>
+                <option value="<?=$disc->artist_id?>"><?=$disc->artist_name?></option>
             <?php endforeach; ?>
         </select>
 
         <br><br>
-        <label for="year_for_label">Year</label><br>
-        <input type="text" name="year" id="year_for_label" >
+        <label for="year">Year</label><br>
+        <input type="text" name="year" id="year" >
         <br>
-        <label for="genre_for_label">Genre</label><br>
-        <input type="text" name="genre" id="genre_for_label" >
+        <label for="genre">Genre</label><br>
+        <input type="text" name="genre" id="genre" >
         <br>
-        <label for="label_for_label">Label</label><br>
-        <input type="text" name="label" id="label_for_label" >
+        <label for="label">Label</label><br>
+        <input type="text" name="label" id="label" >
         <br>
-        <label for="price_for_label">Price</label><br>
-        <input type="text" name="price" id="price_for_label" >
+        <label for="price">Price</label><br>
+        <input type="text" name="price" id="price" >
         <br>
-        <label for="fichier_for_label">Picture</label><br>
-        <input type="file" name="picture" id="fichier_for_label">
+        <label for="picture">Picture</label><br>
+        <input type="file" name="picture" id="picture">
 
         <input type="submit" value="Ajouter">
 
-        </select>
     </form>
 
 </body>
