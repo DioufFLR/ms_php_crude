@@ -1,8 +1,8 @@
 <?php
 include "db.php";
 $db = connexionBase();
-$requete = $db->query("SELECT * FROM disc JOIN artist ON artist.artist_id = disc.artist_id;");
-$tableau = $requete->fetchAll(PDO::FETCH_OBJ);
+$requete = $db->query("SELECT * FROM disc JOIN artist ON disc.disc_id = artist.artist_id");
+$tableauD = $requete->fetchAll(PDO::FETCH_OBJ);
 $requete->closeCursor();
 ?>
 
@@ -26,32 +26,32 @@ $requete->closeCursor();
 
     <form action="script_disc_ajout.php" method="post" enctype="multipart/form-data">
 
-        <label for="title">Title</label><br>
-        <input type="text" name="title" id="title" >
+        <label for="label_title">Title</label><br>
+        <input type="text" name="title" id="label_title" >
         <br>
 
-        <select name="artist" id="artist" class="col-12">
+        <select name="artist" id="label_artist" class="col-12">
             <option disabled selected>Selectionnez un artiste</option>
-            <?php foreach ($tableau as $disc):?>
+            <?php foreach ($tableauD as $disc):?>
                 <option value="<?=$disc->artist_id?>"><?=$disc->artist_name?></option>
             <?php endforeach; ?>
         </select>
 
         <br><br>
-        <label for="year">Year</label><br>
-        <input type="text" name="year" id="year" >
+        <label for="label_year">Year</label><br>
+        <input type="text" name="year" id="label_year" >
         <br>
-        <label for="genre">Genre</label><br>
-        <input type="text" name="genre" id="genre" >
+        <label for="label_genre">Genre</label><br>
+        <input type="text" name="genre" id="label_genre" >
         <br>
-        <label for="label">Label</label><br>
-        <input type="text" name="label" id="label" >
+        <label for="label_label">Label</label><br>
+        <input type="text" name="label" id="label_label" >
         <br>
-        <label for="price">Price</label><br>
-        <input type="text" name="price" id="price" >
+        <label for="label_price">Price</label><br>
+        <input type="text" name="price" id="label_price" >
         <br>
-        <label for="picture">Picture</label><br>
-        <input type="file" name="picture" id="picture">
+        <label for="label_picture">Picture</label><br>
+        <input type="file" name="picture" id="label_picture">
 
         <input type="submit" value="Ajouter">
 
