@@ -9,7 +9,7 @@ $price = (isset($_POST['price']) && ($_POST['price'] != "")) ? $_POST['price'] :
 $picture = (isset($_POST['picture']) && ($_POST['picture'] != "")) ? $_POST['picture'] : Null;
 
 // En cas d'erreur, on renvoie vers le formulaire
-if ($title == Null ||  $artist == Null ||$year == Null || $genre == Null || $label == Null || $price == Null || $picture == Null) {
+if ($title == Null ||  $artist == Null ||$year == Null || $genre == Null || $label == Null || $price == Null) {
     header("Location: disc_new.php");
     exit;
 }
