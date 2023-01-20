@@ -1,7 +1,7 @@
 <?php
 include "db.php";
 $db = connexionBase();
-$requete = $db->query("SELECT * FROM disc JOIN artist ON disc.disc_id = artist.artist_id");
+$requete = $db->query("SELECT * FROM disc JOIN artist ON disc.artist_id = artist.artist_id");
 $tableauD = $requete->fetchAll(PDO::FETCH_OBJ);
 $requete->closeCursor();
 ?>
@@ -24,12 +24,13 @@ $requete->closeCursor();
         <br>
 
 
-    <form action="script_disc_ajout.php" method="post" enctype="multipart/form-data">
+    <form action="script_disc_ajout.php" method="post">
 
         <label for="label_title">Title</label><br>
         <input type="text" name="title" id="label_title" >
         <br>
 
+        <label for="label_artist">Artist</label><br>
         <select name="artist" id="label_artist" class="col-12">
             <option disabled selected>Selectionnez un artiste</option>
             <?php foreach ($tableauD as $disc):?>
@@ -42,7 +43,7 @@ $requete->closeCursor();
         <input type="text" name="year" id="label_year" >
         <br>
         <label for="label_genre">Genre</label><br>
-        <input type="text" name="genre" id="label_genre" >
+        <input type="text" name="genre" id="label_genre">
         <br>
         <label for="label_label">Label</label><br>
         <input type="text" name="label" id="label_label" >

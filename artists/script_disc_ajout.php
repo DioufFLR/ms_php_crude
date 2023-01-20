@@ -9,7 +9,7 @@ $price = (isset($_POST['price']) && ($_POST['price'] != "")) ? $_POST['price'] :
 $picture = (isset($_POST['picture']) && ($_POST['picture'] != "")) ? $_POST['picture'] : Null;
 
 // En cas d'erreur, on renvoie vers le formulaire
-if ($title == Null ||  $artist == Null ||$year == Null || $genre == Null || $label == Null || $price == Null) {
+if ($title == Null ||  $artist == Null ||$year == Null || $genre == Null || $label == Null || $price == Null || $picture == Null) {
     header("Location: disc_new.php");
     exit;
 }
@@ -20,8 +20,7 @@ $db = connexionBase();
 
 try {
     // Construction de la requête INSERT sans injection SQL :
-    $requete = $db->prepare(/** @lang text */ "INSERT INTO disc (disc_title, disc_year, disc_picture, disc_label, disc_genre, disc_price) VALUES (:title, :year, :picture, :label, :genre, :price);
-    INSERT INTO artist (artist_id) VALUES (:artist);");
+    $requete = $db->prepare(/** @lang text */ "INSERT INTO disc (disc_title, disc_year, disc_picture, disc_label, disc_genre, disc_price, artist_id) VALUES (:title, :year, :picture, :label, :genre, :price, :artist);");
 
     // Association des valeurs aux paramètres via bindValue() :
     $requete->bindValue(":title", $title, PDO::PARAM_STR);
