@@ -7,7 +7,7 @@
     $id = $_GET["id"];
 
     // On crée une requête préparée avec condition de recherche :
-    $requete = $db->prepare("SELECT * FROM disc WHERE disc_id=?");
+    $requete = $db->prepare("SELECT * FROM disc JOIN artist ON artist.artist_id = disc.artist_id WHERE disc_id=?");
     // on ajoute l'ID du disque passé dans l'URL en paramètre et on exécute :
     $requete->execute(array($id));
 
@@ -31,12 +31,20 @@
     <h1>Details</h1>
 
     <div class="table">
-<!--        Title--><?php //$disc =;;
-        echo $disc -> disc_title?>
-        Year<?= $disc -> disc_year?>
-        Label<?= $disc->artist_url ?>
-        <a href="disc_new.php?id=<?= $disc->artist_id ?>">Modifier</a>
-        <a href="script_artist_delete.php?id=<?= $myArtist->artist_id ?>">Supprimer</a>
+        <table>
+
+
+            <tr>
+                <td><label for="title_for_label">Title</label><br>
+                    <input value="<?php echo $myArtist->disc_title; ?>" type="text" name="title" id="title_for_label<?php echo $myArtist->disc_title; ?>"></td>
+                <td>Year</td>
+                <td>Label</td>
+                <td>Artist</td>
+                <td>Genre</td>
+                <td>Price</td>
+            </tr>
+        </table>
+
     </div>
 
     </body>

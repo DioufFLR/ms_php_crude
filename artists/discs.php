@@ -45,9 +45,8 @@ $requete->closeCursor();
             <td><p>Label : <?= $disc -> disc_label ?></p></td>
             <td><p>Year : <?= $disc -> disc_year ?></p></td>
             <td><p>Genre : <?= $disc -> disc_genre ?></p></td>
-            <td><a href="disc_detail.php ?id=<?= $disc->artist_id ?>">Détail</a></td>
+            <td><a href="disc_detail.php?id=<?= $disc->disc_id ?>">Détail</a></td>
         </tr>
-
 
     <?php endforeach; ?>
 </table>
