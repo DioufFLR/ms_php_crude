@@ -28,52 +28,59 @@
     </head>
     <body>
 
-    <h1>Details</h1>
+    <div class="main">
+        <h1>Details</h1>
 
-    <div class="table">
-        <table>
+        <div class="table">
 
+            <table>
+                <tr>
+                    <td>
+                        <label for="title_for_label">Title</label><br>
+                        <input disabled value="<?= $myArtist->disc_title ?>" type="text" name="title" id="title_for_label<?php echo $myArtist->disc_title ?>">
+                    </td>
+                    <td>
+                        <label for="year_for_label">Year</label><br>
+                        <input disabled value="<?= $myArtist->disc_year ?>" type="text" name="year" id="year_for_label<?= $myArtist->disc_year ?>">
+                    </td>
+                    <td>
+                        <label for="label_for_label">Label</label><br>
+                        <input disabled value="<?= $myArtist->disc_label ?>" type="text" name="label" id="label_for_label<?= $myArtist->disc_label ?>">
+                    </td>
+                    <td>
+                        <label for="artist_for_label">Artist</label><br>
+                        <input disabled value="<?= $myArtist->artist_name ?>" type="text" name="artist" id="artist_for_label<?= $myArtist->artist_name ?>">
+                    </td>
+                    <td>
+                        <label for="genre_for_label">Genre</label><br>
+                        <input disabled value="<?= $myArtist->disc_genre ?>" type="text" name="genre" id="genre_for_label <?= $myArtist->disc_label ?>">
+                    </td>
+                    <td>
+                        <label for="price_for_label">Price</label><br>
+                        <input disabled value="<?= $myArtist->disc_price ?>" type="text" name="price" id="price_for_label<?= $myArtist->disc_price ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="/assets/img/<?= $myArtist -> disc_picture?>" alt="pochette" width="150" height="150">
+                    </td>
+                </tr>
+            </table>
 
-            <tr>
-                <td>
-                    <label for="title_for_label">Title</label><br>
-                    <input disabled value="<?= $myArtist->disc_title ?>" type="text" name="title" id="title_for_label<?php echo $myArtist->disc_title ?>">
-                </td>
-                <td>
-                    <label for="year_for_label">Year</label><br>
-                    <input disabled value="<?= $myArtist->disc_year ?>" type="text" name="year" id="year_for_label<?= $myArtist->disc_year ?>">
-                </td>
-                <td>
-                    <label for="label_for_label">Label</label><br>
-                    <input disabled value="<?= $myArtist->disc_label ?>" type="text" name="label" id="label_for_label<?= $myArtist->disc_label ?>">
-                </td>
-                <td>
-                    <label for="artist_for_label">Artist</label><br>
-                    <input disabled value="<?= $myArtist->artist_name ?>" type="text" name="artist" id="artist_for_label<?= $myArtist->artist_name ?>">
-                </td>
-                <td>
-                    <label for="genre_for_label">Genre</label><br>
-                    <input disabled value="<?= $myArtist->disc_genre ?>" type="text" name="genre" id="genre_for_label <?= $myArtist->disc_label ?>">
-                </td>
-                <td>
-                    <label for="price_for_label">Price</label><br>
-                    <input disabled value="<?= $myArtist->disc_price ?>" type="text" name="price" id="price_for_label<?= $myArtist->disc_price ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                <img src="/assets/img/<?= $myArtist -> disc_picture?>" alt="pochette" width="150" height="150">
-                </td>
-            </tr>
-        </table>
+        </div>
 
-<!--  TODO
-faire bouton pour modifier
-faire pour bouton pour revenir sur discs.php
-faire bouton pour supprimer
--->
+        <div class="button">
+            <div class="button_update">
+                <button><a href="disc_form.php">Update disc</a></button>
+            </div>
+            <div class="button_delete">
 
+                <button><a href="disc_delete.php">Delete disc</a></button>
+            </div>
+            <div class="button_back">
+                <button><a href="discs.php">Home</a></button>
+            </div>
+        </div>
     </div>
-
     </body>
 </html>
