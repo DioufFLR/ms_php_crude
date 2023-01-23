@@ -22,12 +22,13 @@ $db = connexionBase();
 
 try {
     // Construction de la requête INSERT sans injection SQL :
-    $requete = $db->prepare(/** @lang text */ "UPDATE ");
+    $requete = $db->prepare(/** @lang text */ "UPDATE disc SET disc_title = :title, disc_year = :year, disc_label = :label, artist_name = :artist, disc_genre = :genre, disc_price = :price, disc_picture = :picture WHERE disc_id = :id;");
 
 //    TODO
 //    faire requete
 
     // Association des valeurs aux paramètres via bindValue() :
+    $requete->bindValue(":id", $id, PDO::PARAM_INT);
     $requete->bindValue(":title", $title, PDO::PARAM_STR);
     $requete->bindValue(":artist", $artist, PDO::PARAM_STR);
     $requete->bindValue(":year", $year, PDO::PARAM_INT);
@@ -45,8 +46,6 @@ try {
 
 // Gestion des erreurs
 catch (Exception $e) {
-    var_dump($requete->queryString);
-    var_dump($requete->errorInfo());
     echo "Erreur : " . $requete->errorInfo()[2] . "<br>";
     die("Fin du script (script_disc_ajout.php)");
 }

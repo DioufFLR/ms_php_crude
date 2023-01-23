@@ -70,15 +70,12 @@ $requete->closeCursor();
                     </td>
                 </tr>
             </table>
+                <button><input type="submit">Modifier</button>
             </form>
 
 
     </div>
 
-    <div class="button">
-        <div class="button_update">
-            <button><a href="script_disc_modif.php">Modifier</a></button>
-        </div>
         <div class="button_back">
             <button><a href="disc_detail.php?id=<?=$tableauU->disc_id?>">Retour</a></button>
         </div>
