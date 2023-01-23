@@ -48,7 +48,7 @@ $requete->closeCursor();
             <td><a href="disc_detail.php?id=<?= $disc->disc_id ?>">Détail</a></td>
         </tr>
 
-    <?php endforeach; ?>
+        <?php endforeach; ?>
 </table>
 </body>
 </html>
