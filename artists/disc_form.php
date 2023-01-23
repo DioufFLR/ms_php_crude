@@ -29,7 +29,7 @@ $requete->closeCursor();
 <body>
 
 <div class="main">
-    <h1>Details</h1>
+    <h1>Modifier disc</h1>
 
     <div class="table">
 
@@ -70,7 +70,7 @@ $requete->closeCursor();
                     </td>
                 </tr>
             </table>
-                <button><input type="submit">Modifier</button>
+                <button><input type="submit"></button>
             </form>
 
 

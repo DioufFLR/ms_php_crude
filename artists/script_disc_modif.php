@@ -22,7 +22,7 @@ $db = connexionBase();
 
 try {
     // Construction de la requête INSERT sans injection SQL :
-    $requete = $db->prepare(/** @lang text */ "UPDATE disc SET disc_title = :title, disc_year = :year, disc_label = :label, artist_name = :artist, disc_genre = :genre, disc_price = :price, disc_picture = :picture WHERE disc_id = :id;");
+    $requete = $db->prepare(/** @lang text */ "UPDATE disc JOIN artist ON artist.artist_id = disc.disc_id SET disc_title = :title, disc_year = :year, disc_label = :label, artist_name = :artist, disc_genre = :genre, disc_price = :price, disc_picture = :picture WHERE disc_id = :id;");
 
 //    TODO
 //    faire requete
