@@ -74,7 +74,7 @@
             </div>
             <div class="button_delete">
 
-                <button><a href="disc_delete.php">Delete disc</a></button>
+                <button><a href="disc_delete.php?id=<?= $myArtist->disc_id ?>">Delete disc</a></button>
             </div>
             <div class="button_back">
                 <button><a href="discs.php">Home</a></button>

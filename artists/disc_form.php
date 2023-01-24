@@ -68,7 +68,7 @@ $requete->closeCursor();
                 <tr>
                     <td>
                         <label for="picture_for_label"></label>
-                        <input type="file" name="picture" id="picture_for_label<?= $tableauU->disc_picture ?>">
+                        <input value="<?= $tableauU->disc_picture ?>" type="file" name="picture" id="picture_for_label<?= $tableauU->disc_picture ?>">
                         <img src="/assets/img/<?= $tableauU -> disc_picture?>" alt="pochette" width="150" height="150">
                     </td>
                 </tr>
