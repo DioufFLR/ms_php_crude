@@ -12,7 +12,7 @@ if ($id == Null) {
     header("Location: discs.php");
 }
 elseif ($title == Null || $artist == Null || $year == Null || $genre == Null || $label == Null || $price == Null || $picture == Null)  {
-    header("Location: disc_form.php".$id);
+    header("Location: disc_form.php?id=". $id);
     exit;
 }
 
@@ -22,7 +22,7 @@ $db = connexionBase();
 
 try {
     // Construction de la requête INSERT sans injection SQL :
-    $requete = $db->prepare(/** @lang text */ "UPDATE disc JOIN artist ON artist.artist_id = disc.disc_id SET disc_title = :title, disc_year = :year, disc_label = :label, artist_name = :artist, disc_genre = :genre, disc_price = :price, disc_picture = :picture WHERE disc_id = :id;");
+    $requete = $db->prepare(/** @lang text */ "UPDATE disc JOIN artist ON artist.artist_id = disc.disc_id SET disc_title = :title, disc_year = :year, disc_label = :label, disc_genre = :genre, disc_price = :price, disc_picture = :picture, artist_name = :artist WHERE disc_id = :id;");
 
 //    TODO
 //    faire requete

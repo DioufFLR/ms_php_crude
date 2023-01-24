@@ -1,6 +1,5 @@
 <?php
-function ConnexionBase() {
-
+function connexionBase() {
     try
     {
         $connexion = new PDO('mysql:host=localhost;charset=utf8;dbname=record', 'user', '2704');
