@@ -29,7 +29,18 @@ $requete->closeCursor();
 </head>
 <body>
     <div class="button_delete_delete">
-        <button></button>
+            <label for="envoyer_label"></label>
+
+            <input type="button" onclick="confirmation()" value="confirm" id="envoyer_label" name="envoyer_label">
+        <script>
+            function confirmation()
+            {
+                if(!confirm("Press a button!"))
+                    alert("non");
+                else
+                    alert("OK");
+            }
+        </script>
     </div>
 </body>
 </html>

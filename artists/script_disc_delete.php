@@ -1,24 +1,24 @@
 <?php
-$id = (isset($_POST['id']) && ($_POST['id'] != "")) ? $_POST['id'] : Null;
+// Contrôle de l'ID (si inexistant ou <= 0, retour à la liste) :
+if (!(isset($_GET['id'])) || intval($_GET['id']) <= 0) GOTO TrtRedirection;
 
-// S'il n'y a pas eu de redirection vers le formulaire (= si la vérification des données est ok) :
+// Si la vérification est ok :
 require "db.php";
 $db = connexionBase();
 
 try {
-    $requete = $db->prepare(/** @lang text */ "DELETE FROM disc WHERE disc_id = :id;");
-
-    $requete->execute(array($id));
+    // Construction de la requête DELETE sans injection SQL :
+    $requete = $db->prepare("DELETE FROM disc WHERE artist_id = ?");
+    $requete->execute(array($_GET["id"]));
+    $requete->execute();
+    $requete->closeCursor();
 }
-
-// Gestion des erreurs
 catch (Exception $e) {
     echo "Erreur : " . $requete->errorInfo()[2] . "<br>";
-    die("Fin du script (script_disc_ajout.php)");
+    die("Fin du script (script_disc_delete.php)");
 }
 
 // Si OK: redirection vers la page artists.php
+TrtRedirection:
 header("Location: discs.php");
-
-// Fermeture du script
 exit;
