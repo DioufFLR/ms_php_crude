@@ -28,19 +28,27 @@ $requete->closeCursor();
     <title>Disc - delete</title>
 </head>
 <body>
-    <div class="button_delete_delete">
-            <label for="envoyer_label"></label>
 
-            <input type="button" onclick="confirmation()" value="confirm" id="envoyer_label" name="envoyer_label">
-        <script>
-            function confirmation()
-            {
-                if(!confirm("Press a button!"))
-                    alert("non");
-                else
-                    alert("OK");
-            }
-        </script>
+    <div class="button_delete_delete">
+
+        <form action="script_disc_delete.php" method="post">
+            <label for="id_for_label">
+                <input hidden type="text" name="id" value="<?= $myArtist->disc_id ?>" id="id_for_label<?= $myArtist->disc_id ?>">
+            </label>
+            <label for="envoyer_label"></label>
+                <input type="button" onclick="confirmation()" value="Delete" id="envoyer_label" name="envoyer_label">
+                <script>
+                    function confirmation()
+                    {
+                        if(confirm("Voulez-vous vraiment supprimé le disque <?= $id ?>?")) {
+                            alert("Le disque<?= $id ?> a bien été supprimé");
+                        }
+                    }
+                </script>
+            <input type="submit">
+        </form>
+
     </div>
+
 </body>
 </html>

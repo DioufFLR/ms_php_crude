@@ -8,7 +8,7 @@ $db = connexionBase();
 
 try {
     // Construction de la requête DELETE sans injection SQL :
-    $requete = $db->prepare("DELETE FROM disc WHERE artist_id = ?");
+    $requete = $db->prepare("DELETE FROM disc WHERE disc_id = ?");
     $requete->execute(array($_GET["id"]));
     $requete->execute();
     $requete->closeCursor();
