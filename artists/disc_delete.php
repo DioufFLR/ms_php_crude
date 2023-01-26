@@ -18,6 +18,23 @@ $myArtist = $requete->fetch(PDO::FETCH_OBJ);
 $requete->closeCursor();
 ?>
 
+<script>
+    function action()
+    {
+        const ok = confirm("Etes-vous sûr de vouloir supprimer le disc <?= $myArtist->disc_id ?> ?");
+        if (ok)
+        {
+            alert("allons-y !");
+            return true;
+        }
+        else
+        {
+            alert("abandon");
+            return false;
+        }
+    }
+</script>
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -31,22 +48,10 @@ $requete->closeCursor();
 
     <div class="button_delete_delete">
 
-        <form action="script_disc_delete.php" method="post">
-            <label for="id_for_label">
-                <input hidden type="text" name="id" value="<?= $myArtist->disc_id ?>" id="id_for_label<?= $myArtist->disc_id ?>">
-            </label>
-            <label for="envoyer_label"></label>
-                <input type="button" onclick="confirmation()" value="Delete" id="envoyer_label" name="envoyer_label">
-                <script>
-                    function confirmation()
-                    {
-                        if(confirm("Voulez-vous vraiment supprimé le disque <?= $id ?>?")) {
-                            alert("Le disque<?= $id ?> a bien été supprimé");
-                        }
-                    }
-                </script>
-            <input type="submit">
-        </form>
+        <label for="id_for_label<?= $myArtist->disc_id ?>"></label>
+        <input hidden type="text" name="id" value="<?= $myArtist->disc_id ?>" id="id_for_label<?= $myArtist->disc_id ?>">
+
+        <button><a href="script_disc_delete.php" onclick="return action()">Supprimer le disc <?= $myArtist->disc_id ?></a></button>
 
     </div>
 
