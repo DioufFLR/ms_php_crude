@@ -8,14 +8,13 @@ $db = connexionBase();
 
 try {
     // Construction de la requête DELETE sans injection SQL :
-    $requete = $db->prepare("DELETE FROM disc WHERE disc_id = ?");
+    $requete = $db->prepare("DELETE FROM disc WHERE disc.disc_id = ?");
     $requete->execute(array($_GET["id"]));
     $requete->execute();
     $requete->closeCursor();
 }
 catch (Exception $e) {
     echo "Erreur : " . $requete->errorInfo()[2] . "<br>";
-    die("Fin du script (script_disc_delete.php)");
 }
 
 // Si OK: redirection vers la page artists.php

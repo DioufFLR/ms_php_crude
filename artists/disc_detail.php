@@ -18,6 +18,22 @@
     $requete->closeCursor();
 ?>
 
+<script>
+    function action()
+    {
+        const ok = confirm("Etes-vous sûr de vouloir supprimer le disc <?= $myArtist->disc_id ?> ?");
+        if (ok)
+        {
+            alert("Le disc a été supprimé");
+            return true;
+        }
+        else
+        {
+            alert("Abandon");
+            return false;
+        }
+    }
+</script>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -73,8 +89,7 @@
                 <button><a href="disc_form.php?id=<?= $myArtist->disc_id ?>">Update</a></button>
             </div>
             <div class="button_delete">
-
-                <button><a href="disc_delete.php?id=<?= $myArtist->disc_id ?>">Delete disc</a></button>
+                <button><a href="script_disc_delete.php?id=<?=$myArtist->disc_id?>" onclick="return action()">Supprimer</a></button>
             </div>
             <div class="button_back">
                 <button><a href="discs.php">Home</a></button>
