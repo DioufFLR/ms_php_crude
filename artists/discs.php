@@ -4,7 +4,6 @@
 include "db.php";
 // on exécute la méthode de connexion à notre BDD
 $db = connexionBase();
-
 // on lance une requête pour chercher toutes les fiches d'artistes
 $requete = $db->query("SELECT * FROM disc JOIN artist on artist.artist_id = disc.artist_id");
 // on récupère tous les résultats trouvés dans une variable
