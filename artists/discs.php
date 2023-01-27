@@ -33,7 +33,9 @@ $requete->closeCursor();
     <th><h1>Liste des disques</h1></th>
 
     <th><button name="ajouter"><a href="disc_new.php">Ajouter</a></button></th>
-        <?php foreach ($tableau as $disc): ?>
+    <th><button name="page_artists"><a href="artists.php">Artists</a></button></th>
+
+    <?php foreach ($tableau as $disc): ?>
 
         <tr>
             <td><img src="/assets/img/<?= $disc -> disc_picture?>" alt="pochette" width="150" height="150"></td>

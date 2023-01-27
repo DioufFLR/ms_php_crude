@@ -28,6 +28,9 @@ $requete->closeCursor();
 </head>
 <body>
 
+<button name="page_ajout"><a href="artist_new.php">Ajouter artistes</a></button>
+<button name="page_discs"><a href="discs.php">Disques</a></button>
+
 
     <table>
         <tr>
