@@ -98,19 +98,12 @@
         </div>
     </div>
 
+    <div class="container mt-3">
+        <button type="button" class="btn btn-danger"><a class="link-dark" href="disc_form.php?id=<?= $myArtist->disc_id ?>">Modifier</a></button>
+        <button type="button" class="btn btn-danger"><a class="link-dark" href="script_disc_delete.php?id=<?=$myArtist->disc_id?>" onclick="return action()">Supprimer</a></button>
+        <button type="button" class="btn btn-danger"><a class="link-dark" href="discs.php">Retour</a></button>
 
-
-
-
-<!--        <div class="button">-->
-<!--            <div class="button_update">-->
-<!--                <button><a href="disc_form.php?id=--><?php //= $myArtist->disc_id ?><!--">Update</a></button>-->
-<!--            </div>-->
-<!--            <div class="button_delete">-->
-<!--                <button><a href="script_disc_delete.php?id=--><?php //=$myArtist->disc_id?><!--" onclick="return action()">Supprimer</a></button>-->
-<!--            </div>-->
-<!--        </div>-->
-
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
