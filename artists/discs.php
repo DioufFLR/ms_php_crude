@@ -34,7 +34,7 @@ $requete->closeCursor();
 <!--    </div>-->
 
     <nav class="navbar navbar-expand-lg bg-dark ps-3">
-        <div class="container-fluid">
+        <div class="container align-self-center">
             <a class="navbar-brand text-danger" href="#">Liste des disques (15)</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -52,7 +52,8 @@ $requete->closeCursor();
         </div>
     </nav>
 
-    <div class="container ps-3">
+
+    <div class="container align-self-center ps-3 mt-3">
         <div class="card-group border-0 mb-3" style="max-width: 1265px;">
             <?php foreach ($tableau as $disc): ?>
             <div class="col-6 ps-3">
