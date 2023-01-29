@@ -23,16 +23,6 @@ $requete->closeCursor();
 </head>
 <body>
 
-<!--    <div class="container">-->
-<!--         <div class="col-8">-->
-<!--             <h1 class="position-absolute top-0 start-0">Liste des disques</h1>-->
-<!--         </div>-->
-<!--        <div class="col-4">-->
-<!--            <button name="ajouter"><a href="disc_new.php">Ajouter</a></button>-->
-<!--            <button name="page_artists"><a href="artists.php">Artists</a></button>-->
-<!--        </div>-->
-<!--    </div>-->
-
     <nav class="navbar navbar-expand-lg bg-dark ps-3">
         <div class="container align-self-center">
             <a class="navbar-brand text-danger" href="#">Liste des disques (15)</a>
