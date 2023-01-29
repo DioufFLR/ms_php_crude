@@ -1,5 +1,4 @@
 <?php
-
 // on importe le contenu du fichier "db.php"
 include "db.php";
 // on exécute la méthode de connexion à notre BDD
@@ -10,7 +9,6 @@ $requete = $db->query("SELECT * FROM disc JOIN artist on artist.artist_id = disc
 $tableau = $requete->fetchAll(PDO::FETCH_OBJ);
 // on clôt la requête en BDD
 $requete->closeCursor();
-
 ?>
 <!doctype html>
 <html lang="fr">
@@ -25,42 +23,59 @@ $requete->closeCursor();
 </head>
 <body>
 
-    <div class="container">
-        <h1>Liste des disques</h1>
+<!--    <div class="container">-->
+<!--         <div class="col-8">-->
+<!--             <h1 class="position-absolute top-0 start-0">Liste des disques</h1>-->
+<!--         </div>-->
+<!--        <div class="col-4">-->
+<!--            <button name="ajouter"><a href="disc_new.php">Ajouter</a></button>-->
+<!--            <button name="page_artists"><a href="artists.php">Artists</a></button>-->
+<!--        </div>-->
+<!--    </div>-->
 
-        <button name="ajouter"><a href="disc_new.php">Ajouter</a></button>
-        <button name="page_artists"><a href="artists.php">Artists</a></button>
+    <nav class="navbar navbar-expand-lg bg-dark ps-3">
+        <div class="container-fluid">
+            <a class="navbar-brand text-danger" href="#">Liste des disques (15)</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="d-flex flex-row-reverse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active text-danger" aria-current="page" href="artists.php">Artistes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" href="disc_new.php">Ajouter</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-        <div class="card-group border-0 mb-3" style="max-width: 540px;">
+    <div class="container ps-3">
+        <div class="card-group border-0 mb-3" style="max-width: 1265px;">
             <?php foreach ($tableau as $disc): ?>
-            <div class="col-6">
+            <div class="col-6 ps-3">
                 <div class="row g-0">
-
-                        <div class="col-md-4">
-                            <img src="/assets/img/<?= $disc -> disc_picture?>" alt="pochette" class="rounded floated-start" width="200px">
+                    <div class="col-md-4">
+                         <img src="/assets/img/<?= $disc -> disc_picture?>" alt="pochette" class="card-img-top rounded img-fluide">
+                    </div>
+                    <div class="col-md-8 ps-2">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $disc -> disc_title?></h5>
+                            <p class="card-text"><?= $disc -> artist_name?><br>
+                                <span class="fw-bold">Label :</span><?= $disc -> disc_label ?><br>
+                                <span class="fw-bold">Year :</span><?= $disc -> disc_year ?><br>
+                                <span class="fw-bold">Genre :</span><?= $disc -> disc_genre ?></p>
+                            <a href="disc_detail.php?id=<?= $disc->disc_id ?>" class="btn btn-danger">Détail</a>
                         </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title"><?= $disc -> disc_title?></h5>
-                                <p class="card-text"><?= $disc -> artist_name?><br>
-                                    <span class="fw-bold">Label :</span><?= $disc -> disc_label ?><br>
-                                    <span class="fw-bold">Year :</span><?= $disc -> disc_year ?><br>
-                                    <span class="fw-bold">Genre :</span><?= $disc -> disc_genre ?></p>
-                                <a href="disc_detail.php?id=<?= $disc->disc_id ?>" class="btn btn-info">Détail</a>
-                            </div>
-                        </div>
-
+                    </div>
                 </div>
             </div>
             <?php endforeach; ?>
         </div>
 
     </div>
-
-
-
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
