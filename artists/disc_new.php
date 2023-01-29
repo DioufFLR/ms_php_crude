@@ -18,13 +18,25 @@ $requete->closeCursor();
     <title>Ajout disc</title>
 </head>
 <body>
-<h1>Ajouter un vinyle</h1>
 
-    <button><a href="discs.php">Revenir aux discs</a></button>
-
-        <br>
-        <br>
-
+    <nav class="navbar navbar-expand-lg bg-dark ps-3">
+        <div class="container align-self-center">
+            <a class="navbar-brand text-danger" href="#">Ajouter un vinyle</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="d-flex flex-row-reverse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active text-danger" aria-current="page" href="artists.php">Artistes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" href="discs.php">Disques</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <form action="script_disc_ajout.php" method="post">
 

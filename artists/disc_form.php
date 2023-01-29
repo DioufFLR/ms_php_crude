@@ -2,18 +2,14 @@
 // On se connecte à la BDD via notre fichier db.php :
 require "db.php";
 $db = connexionBase();
-
 // On récupère l'ID passé en paramètre :
 $id = $_GET["id"];
-
 // On crée une requête préparée avec condition de recherche :
 $requete = $db->prepare("SELECT * FROM disc JOIN artist ON artist.artist_id = disc.artist_id WHERE disc_id=?");
 // on ajoute l'ID du disque passé dans l'URL en paramètre et on exécute :
 $requete->execute(array($id));
-
 // on récupère le 1e (et seul) résultat :
 $tableauU = $requete->fetch(PDO::FETCH_OBJ);
-
 // on clôt la requête en BDD
 $requete->closeCursor();
 ?>
@@ -31,9 +27,26 @@ $requete->closeCursor();
 </head>
 <body>
 
-<div class="main">
-    <h1>Modifier disc</h1>
+    <nav class="navbar navbar-expand-lg bg-dark ps-3">
+        <div class="container align-self-center">
+            <a class="navbar-brand text-danger" href="#">Modifier disques</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="d-flex flex-row-reverse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active text-danger" aria-current="page" href="artists.php">Artistes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" href="discs.php">Disques</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+<div class="main">
     <div class="table">
 
 
@@ -84,9 +97,6 @@ $requete->closeCursor();
 
         <div class="button_back">
             <button><a href="disc_detail.php?id=<?=$tableauU->disc_id?>">Retour</a></button>
-        </div>
-        <div class="button_back">
-            <button><a href="discs.php">Home</a></button>
         </div>
     </div>
 
