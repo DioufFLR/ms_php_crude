@@ -34,11 +34,11 @@ $requete->closeCursor();
         <select name="artist" id="label_artist" class="col-12">
             <option disabled selected>Selectionnez un artiste</option>
             <?php foreach ($tableauD as $disc):?>
-                <option value="<?=$disc->artist_id?>"><?=$disc->artist_name?></option>
+                <option value="<?= $disc->artist_id ?>"><?= $disc->artist_name ?></option>
             <?php endforeach; ?>
         </select>
 
-        <br><br>
+        <br>
         <label for="label_year">Year</label><br>
         <input type="text" name="year" id="label_year" >
         <br>
@@ -53,7 +53,7 @@ $requete->closeCursor();
         <br>
         <label for="label_picture">Picture</label><br>
         <input type="file" name="picture" id="label_picture">
-
+        <br><br>
         <input type="submit" value="Ajouter">
 
     </form>
