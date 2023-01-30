@@ -46,59 +46,54 @@ $requete->closeCursor();
         </div>
     </nav>
 
-<div class="main">
-    <div class="table">
-
-
-            <form action="script_disc_modif.php" method="post">
-                <label for="id_for_label">
-                    <input hidden type="text" name="id" value="<?= $tableauU->disc_id ?>" id="id_for_label<?= $tableauU->disc_id ?>">
-                </label>
-                <table>
-                <tr>
-                    <td>
-                        <label for="title_for_label">Title</label><br>
-                        <input value="<?= $tableauU->disc_title ?>" type="text" name="title" id="title_for_label<?php echo $tableauU->disc_title ?>">
-                    </td>
-                    <td>
-                        <label for="year_for_label">Year</label><br>
-                        <input value="<?= $tableauU->disc_year ?>" type="text" name="year" id="year_for_label<?= $tableauU->disc_year ?>">
-                    </td>
-                    <td>
-                        <label for="label_for_label">Label</label><br>
-                        <input value="<?= $tableauU->disc_label ?>" type="text" name="label" id="label_for_label<?= $tableauU->disc_label ?>">
-                    </td>
-                    <td>
-                        <label for="artist_for_label">Artist</label><br>
-                        <input value="<?= $tableauU->artist_name ?>" type="text" name="artist" id="artist_for_label<?= $tableauU->artist_name ?>">
-                    </td>
-                    <td>
-                        <label for="genre_for_label">Genre</label><br>
-                        <input value="<?= $tableauU->disc_genre ?>" type="text" name="genre" id="genre_for_label <?= $tableauU->disc_label ?>">
-                    </td>
-                    <td>
-                        <label for="price_for_label">Price</label><br>
-                        <input value="<?= $tableauU->disc_price ?>" type="text" name="price" id="price_for_label<?= $tableauU->disc_price ?>">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="picture_for_label"></label>
-                        <input value="<?= $tableauU->disc_picture ?>" type="file" name="picture" id="picture_for_label<?= $tableauU->disc_picture ?>">
-                        <img src="/assets/img/<?= $tableauU -> disc_picture?>" alt="pochette" width="150" height="150">
-                    </td>
-                </tr>
-            </table>
-                <button><input type="submit"></button>
-            </form>
-
-
-    </div>
-
-        <div class="button_back">
-            <button><a href="disc_detail.php?id=<?=$tableauU->disc_id?>">Retour</a></button>
+    <div class="container">
+        <form action="script_disc_modif.php" method="post">
+            <label for="id_for_label">
+                <input hidden type="text" name="id" value="<?= $tableauU->disc_id ?>" id="id_for_label<?= $tableauU->disc_id ?>">
+            </label>
+        <div class="row">
+            <div class="col mt-5">
+                <label class="pb-2" for="title">Titre</label>
+                <input class="form-control" placeholder="title" aria-label="title"  value="<?= $tableauU->disc_title ?>" type="text" name="title" id="title<?php echo $tableauU->disc_title ?>">
+            </div>
+            <div class="col mt-5">
+                <label class="pb-2"  for="year">Année</label>
+                <input class="form-control" placeholder="year" aria-label="year"  value="<?= $tableauU->disc_year ?>" type="text" name="year" id="year<?= $tableauU->disc_year ?>">
+            </div>
         </div>
+        <div class="row">
+            <div class="col mt-2">
+                <label class="pb-2" for="label">Label</label>
+                <input class="form-control" placeholder="label" aria-label="label"  value="<?= $tableauU->disc_label ?>" type="text" name="label" id="label<?= $tableauU->disc_label ?>">
+            </div>
+            <div class="col mt-2">
+                <label class="pb-2" for="artist">Artiste</label>
+                <input class="form-control" placeholder="artist" aria-label="artist"  value="<?= $tableauU->artist_name ?>" type="text" name="artist" id="artist<?= $tableauU->artist_name ?>">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mt-2">
+                <label class="pb-2" for="genre">Genre</label>
+                <input class="form-control" placeholder="genre" aria-label="genre"  value="<?= $tableauU->disc_genre ?>" type="text" name="genre" id="genre<?= $tableauU->disc_genre ?>">
+            </div>
+            <div class="col mt-2">
+                <label class="pb-2" for="price">Prix</label>
+                <input class="form-control" placeholder="price" aria-label="price"  value="<?= $tableauU->disc_price ?>" type="text" name="price" id="price<?= $tableauU->disc_price ?>">
+            </div>
+        </div>
+        <div class="row col-3 mt-3">
+            <label class="pb-2" for="picture">Pochette</label>
+            <input value="<?= $tableauU->disc_picture ?>" type="file" name="picture" id="picture_for_label<?= $tableauU->disc_picture ?>">
+            <img src="/assets/img/<?= $tableauU -> disc_picture?>" alt="pochette">
+        </div>
+        <button><input type="submit"></button>
+        </form>
     </div>
+
+    <div class="container mt-3">
+        <button type="button" class="btn btn-danger"><a class="link-dark" href="disc_detail.php?id=<?= $tableauU->disc_id ?>">Retour</a></button>
+    </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

@@ -65,31 +65,31 @@
         <div class="row">
             <div class="col mt-5">
                 <label class="pb-2" for="title">Titre</label>
-                <input class="form-control" placeholder="Title" aria-label="Title" disabled value="<?= $myArtist->disc_title ?>" type="text" name="title" id="title_for_label<?php echo $myArtist->disc_title ?>">
+                <input class="form-control" placeholder="title" aria-label="title" disabled value="<?= $myArtist->disc_title ?>" type="text" name="title" id="title<?php echo $myArtist->disc_title ?>">
             </div>
             <div class="col mt-5">
                 <label class="pb-2"  for="year">Année</label>
-                <input class="form-control" placeholder="Title" aria-label="Title" disabled value="<?= $myArtist->disc_label ?>" type="text" name="label" id="label_for_label<?= $myArtist->disc_label ?>">
+                <input class="form-control" placeholder="year" aria-label="year" disabled value="<?= $myArtist->disc_year ?>" type="text" name="year" id="year<?= $myArtist->disc_year ?>">
             </div>
         </div>
         <div class="row">
             <div class="col mt-2">
-                <label class="pb-2" for="title">Label</label>
-                <input class="form-control" placeholder="Title" aria-label="Title" disabled value="<?= $myArtist->disc_label ?>" type="text" name="label" id="label_for_label<?= $myArtist->disc_label ?>">
+                <label class="pb-2" for="label">Label</label>
+                <input class="form-control" placeholder="label" aria-label="label" disabled value="<?= $myArtist->disc_label ?>" type="text" name="label" id="label<?= $myArtist->disc_label ?>">
             </div>
             <div class="col mt-2">
-                <label class="pb-2" for="title">Artiste</label>
-                <input class="form-control" placeholder="Title" aria-label="Title" disabled value="<?= $myArtist->artist_name ?>" type="text" name="artist" id="artist_for_label<?= $myArtist->artist_name ?>">
+                <label class="pb-2" for="artist">Artiste</label>
+                <input class="form-control" placeholder="artist" aria-label="artist" disabled value="<?= $myArtist->artist_name ?>" type="text" name="artist" id="artist<?= $myArtist->artist_name ?>">
             </div>
         </div>
         <div class="row">
             <div class="col mt-2">
-                <label class="pb-2" for="title">Genre</label>
-                <input class="form-control" placeholder="Title" aria-label="Title" disabled value="<?= $myArtist->disc_genre ?>" type="text" name="genre" id="genre_for_label <?= $myArtist->disc_label ?>">
+                <label class="pb-2" for="genre">Genre</label>
+                <input class="form-control" placeholder="genre" aria-label="genre" disabled value="<?= $myArtist->disc_genre ?>" type="text" name="genre" id="genre<?= $myArtist->disc_genre ?>">
             </div>
             <div class="col mt-2">
-                <label class="pb-2" for="title">Prix</label>
-                <input class="form-control" placeholder="Title" aria-label="Title" disabled value="<?= $myArtist->disc_price ?>" type="text" name="price" id="price_for_label<?= $myArtist->disc_price ?>">
+                <label class="pb-2" for="price">Prix</label>
+                <input class="form-control" placeholder="price" aria-label="price" disabled value="<?= $myArtist->disc_price ?>" type="text" name="price" id="price<?= $myArtist->disc_price ?>">
             </div>
         </div>
         <div class="row col-3 mt-3">
@@ -102,7 +102,6 @@
         <button type="button" class="btn btn-danger"><a class="link-dark" href="disc_form.php?id=<?= $myArtist->disc_id ?>">Modifier</a></button>
         <button type="button" class="btn btn-danger"><a class="link-dark" href="script_disc_delete.php?id=<?=$myArtist->disc_id?>" onclick="return action()">Supprimer</a></button>
         <button type="button" class="btn btn-danger"><a class="link-dark" href="discs.php">Retour</a></button>
-
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
