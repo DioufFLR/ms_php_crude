@@ -84,14 +84,18 @@ $requete->closeCursor();
         <div class="row col-3 mt-3">
             <label class="pb-2" for="picture">Pochette</label>
             <input value="<?= $tableauU->disc_picture ?>" type="file" name="picture" id="picture_for_label<?= $tableauU->disc_picture ?>">
+        </div>
+        <div class="col-2 mt-3">
             <img src="/assets/img/<?= $tableauU -> disc_picture?>" alt="pochette">
         </div>
-        <button><input type="submit"></button>
+            <div class="row col-1 mt-3">
+                <input class="btn btn-success link-dark" type="submit">
+            </div>
         </form>
     </div>
 
     <div class="container mt-3">
-        <button type="button" class="btn btn-danger"><a class="link-dark" href="disc_detail.php?id=<?= $tableauU->disc_id ?>">Retour</a></button>
+        <a class="link-dark btn btn-danger" href="disc_detail.php?id=<?= $tableauU->disc_id ?>">Retour</a>
     </div>
 
 

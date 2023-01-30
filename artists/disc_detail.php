@@ -99,9 +99,9 @@
     </div>
 
     <div class="container mt-3">
-        <button type="button" class="btn btn-danger"><a class="link-dark" href="disc_form.php?id=<?= $myArtist->disc_id ?>">Modifier</a></button>
-        <button type="button" class="btn btn-danger"><a class="link-dark" href="script_disc_delete.php?id=<?=$myArtist->disc_id?>" onclick="return action()">Supprimer</a></button>
-        <button type="button" class="btn btn-danger"><a class="link-dark" href="discs.php">Retour</a></button>
+        <a class="link-dark btn btn-danger" href="disc_form.php?id=<?= $myArtist->disc_id ?>">Modifier</a>
+        <a class="link-dark btn btn-danger" href="script_disc_delete.php?id=<?=$myArtist->disc_id?>" onclick="return action()">Supprimer</a>
+        <a class="link-dark btn btn-danger" href="discs.php">Retour</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
