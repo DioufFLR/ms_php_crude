@@ -38,39 +38,48 @@ $requete->closeCursor();
         </div>
     </nav>
 
-    <form action="script_disc_ajout.php" method="post">
+    <div class="container pt-3">
+        <form action="script_disc_ajout.php" method="post">
+            <div class="row">
+                <label for="label_title">Titre</label><br>
+                <input type="text" name="title" placeholder="titre" id="label_title" >
+            </div>
+            <div class="row mt-2">
+                <label for="label_artist">Artiste</label><br>
+                <select name="artist" id="label_artist" class="col-12">
+                    <option disabled selected>Selectionnez un artiste</option>
+                    <?php foreach ($tableauD as $disc):?>
+                        <option value="<?= $disc->artist_id ?>"><?= $disc->artist_name ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="row mt-2">
+                <label for="label_year">Année</label><br>
+                <input type="text" name="year" id="label_year" >
+            </div>
+            <div class="row mt-2">
+                <label for="label_genre">Genre</label><br>
+                <input type="text" name="genre" id="label_genre">
+            </div>
+            <div class="row mt-2">
+                <label for="label_label">Label</label><br>
+                <input type="text" name="label" id="label_label" >
+            </div>
+            <div class="row mt-2">
+                <label for="label_price">Prix</label><br>
+                <input type="text" name="price" id="label_price" >
+            </div>
+            <div class="row mt-2">
+                <label for="label_picture">Pochette</label><br>
+                <input type="file" name="picture" id="label_picture">
+            </div>
+            <div class="col-1 mt-5">
+                <input type="submit" class="btn btn-success" value="Ajouter">
+            </div>
 
-        <label for="label_title">Title</label><br>
-        <input type="text" name="title" id="label_title" >
-        <br>
+        </form>
+    </div>
 
-        <label for="label_artist">Artist</label><br>
-        <select name="artist" id="label_artist" class="col-12">
-            <option disabled selected>Selectionnez un artiste</option>
-            <?php foreach ($tableauD as $disc):?>
-                <option value="<?= $disc->artist_id ?>"><?= $disc->artist_name ?></option>
-            <?php endforeach; ?>
-        </select>
-
-        <br>
-        <label for="label_year">Year</label><br>
-        <input type="text" name="year" id="label_year" >
-        <br>
-        <label for="label_genre">Genre</label><br>
-        <input type="text" name="genre" id="label_genre">
-        <br>
-        <label for="label_label">Label</label><br>
-        <input type="text" name="label" id="label_label" >
-        <br>
-        <label for="label_price">Price</label><br>
-        <input type="text" name="price" id="label_price" >
-        <br>
-        <label for="label_picture">Picture</label><br>
-        <input type="file" name="picture" id="label_picture">
-        <br><br>
-        <input type="submit" value="Ajouter">
-
-    </form>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
