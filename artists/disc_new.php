@@ -55,19 +55,19 @@ $requete->closeCursor();
             </div>
             <div class="row mt-2">
                 <label for="label_year">Année</label><br>
-                <input type="text" name="year" id="label_year" >
+                <input type="text" name="year" placeholder="année" id="label_year" >
             </div>
             <div class="row mt-2">
                 <label for="label_genre">Genre</label><br>
-                <input type="text" name="genre" id="label_genre">
+                <input type="text" name="genre" placeholder="genre" id="label_genre">
             </div>
             <div class="row mt-2">
                 <label for="label_label">Label</label><br>
-                <input type="text" name="label" id="label_label" >
+                <input type="text" name="label" placeholder="label" id="label_label" >
             </div>
             <div class="row mt-2">
                 <label for="label_price">Prix</label><br>
-                <input type="text" name="price" id="label_price" >
+                <input type="text" name="price" placeholder="prix" id="label_price" >
             </div>
             <div class="row mt-2">
                 <label for="label_picture">Pochette</label><br>
